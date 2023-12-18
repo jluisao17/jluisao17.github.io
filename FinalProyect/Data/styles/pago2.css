@@ -1,0 +1,305 @@
+/* Importar un tipo de letra con ciertas características */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* Diseño general */
+* {
+  font-family: 'Poppins', sans-serif; /* Configuración de la fuente principal para todo el documento */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear; /* Transición suave para todos los elementos con duración de 0.2 segundos */
+}
+
+/* Contenedor principal del formulario */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+  background: linear-gradient(55deg, #0dcaf0, rgb(255, 255, 255)); /* Fondo con un gradiente lineal */
+}
+
+/* Estilos para el formulario */
+.container form {
+  padding: 20px;
+  width: 700px;
+  background: #fff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1); /* Sombra ligera */
+}
+
+/* Filas del formulario */
+.container form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Estilos para cada columna en el formulario */
+.container form .row .col {
+  flex: 1 1 250px;
+}
+
+/* Estilos para el título en cada columna */
+.container form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* Estilos para las cajas de entrada de texto */
+.container form .row .col .inputBox {
+  margin: 15px 0;
+  opacity: 0;
+  transform: translateY(100px);
+  filter: blur(5px);
+  transition: 1s ;
+}
+.container form .row .inputBox:nth-child(2){
+  transition-delay: 200ms;
+}
+.container form .row .inputBox:nth-child(3){
+  transition-delay: 400ms;
+}
+.container form .row .inputBox:nth-child(4){
+  transition-delay: 600ms;
+}
+.container form .row .inputBox:nth-child(5){
+  transition-delay: 800ms;
+}
+.container form .row .inputBox:nth-child(6){
+  transition-delay: 1000ms;
+}
+.container form .row .delay1{
+  transition-delay: 10s;
+}
+.container form .row .col .inputBox.animation{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0); 
+}
+
+.container form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus {
+  border: 1px solid #000; /* Cambiar el borde al enfocar el campo */
+}
+
+.container form .row .col .inputBox input:valid {
+  border: 1px solid #00ff11; /* Cambiar el borde cuando el campo es válido */
+}
+
+.container form .row .col .inputBox input:invalid {
+  border: 1px solid #ff0000; /* Cambiar el borde cuando el campo es inválido */
+}
+
+/* Estilos para la fila con elementos flexibles */
+.container form .row .col .flex {
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilos para las cajas de entrada en la fila flexible */
+.container form .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+
+/* Estilos para la imagen de las tarjetas aceptadas */
+.container form .row .col .inputBox img {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+/* Estilos para el botón de enviar */
+.container form .submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background: #1d4ed8;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover {
+  background: #1e40af;
+}
+
+/* Estilos para resaltar campos con error */
+.container form .row .col .inputBox .error {
+  border: 1px solid red;
+}
+
+/* Estilos para el contenedor del botón de carga */
+.loading-btn-wrapper {
+  display: inline-block;
+  width: 240px;
+  height: 40px;
+  text-align: center;
+}
+
+/* Estilos para el botón de carga */
+.loading-btn {
+  position: relative;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 205px;
+  width: 100%;
+  height: 100%;
+  background: #0dcaf0;
+  border: 0;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.33s ease-in-out;
+}
+
+.loading-btn:hover {
+  background: #18badb;
+}
+
+.loading-btn,
+.loading-btn:focus {
+  outline: none;
+}
+
+/* Estados del botón de carga */
+.loading-btn--pending,
+.loading-btn--success,
+.loading-btn--fail {
+  width: 40px;
+  margin-left: 310px;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Estilos para el texto del botón durante la animación */
+.loading-btn--pending .loading-btn__text,
+.loading-btn--success .loading-btn__text,
+.loading-btn--fail .loading-btn__text {
+  opacity: 0;
+}
+
+/* Animación de carga en el botón */
+.loading-btn--pending:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  border: 3px solid rgba(255, 255, 255, 0.33);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  -webkit-animation: loading-btn--fade-in 0.33s ease, loading-btn--rotation 0.66s linear 0s infinite;
+  animation: loading-btn--fade-in 0.33s ease, loading-btn--rotation 0.66s linear 0s infinite;
+}
+.loading-text--none{
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  left: 550px;
+  transition: 1s ease;
+}
+.loading-text--none.active{
+  position: absolute;
+  opacity: 1;
+}
+
+/* Estilos para el estado de éxito del botón de carga */
+.loading-btn--success,
+.loading-btn--success:hover {
+  background: #8bc34a;
+}
+
+.loading-btn--success:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  height: 25%;
+  width: 50%;
+  border: 3px solid #fff;
+  border-top-width: 0;
+  border-right-width: 0;
+  transform: translate(-50%, -75%) rotate(-45deg);
+  -webkit-animation: loading-btn--fade-in 0.6s ease;
+  animation: loading-btn--fade-in 0.6s ease;
+}
+
+/* Estilos para el texto del botón */
+.loading-btn__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: #fff;
+  transition: inherit;
+}
+
+/**
+ * Animaciones
+ */
+@-webkit-keyframes loading-btn--fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading-btn--fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes loading-btn--rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes loading-btn--rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media (width < 1000px) {
+  .loading-btn{
+    position: relative;
+    margin-left: 100px;
+  }
+}

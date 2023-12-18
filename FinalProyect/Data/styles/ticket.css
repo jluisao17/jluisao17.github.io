@@ -1,0 +1,44 @@
+/* hacer el body de color negro */
+body {
+  background-color: #18181B;
+}
+/* la clase "ticket" tendra un ancho máximo de 400px y una distancia del top de 50px */
+.ticket {
+  max-width: 400px;
+  margin: 50px auto;
+}
+/* la clase card dentro de la clase ticket tendra un borde redondeado de 10px y una sombra */
+.ticket .card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* card-header con color de fondo azul un color de texto blanco alineado de texto centrado y un remarque con bold */
+.ticket .card-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+/* card-body relleno de 20px */
+.ticket .card-body {
+  padding: 20px;
+}
+/* btn-primary con un ancho del 100% */
+.ticket .btn-primary {
+  width: 100%;
+}
+/*  estilo de la clase .error */
+.error{
+  color: red;
+}
+.full{
+  color: white;
+}
+.btn{
+  background: #007bff;
+  color: #fff;
+}
+.btn:hover{
+  background: #0067d5;
+  color: #fff;
+}
