@@ -234,7 +234,7 @@ body {
     height: 11vmin;
     border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
     background-color: transparent;
-    background-image: linear-gradient(to top, transparent, #ffffff);
+    background-image: linear-gradient(to top, #b9b262, #fce700);
     transform-origin: bottom center;
     opacity: 0.9;
     box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
@@ -258,7 +258,7 @@ body {
     transform-origin: bottom left;
     border-radius: 4vmin 10vmin 4vmin 4vmin;
     transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-    background-image: linear-gradient(to top, transparent, #ffffff);
+    background-image: linear-gradient(to top, #b9b262, #fce700);
     z-index: 1;
     opacity: 0.8;
 }
@@ -270,7 +270,7 @@ body {
     width: 9vmin;
     height: 4vmin;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #6d4343;
 }
 
 .flower__white-circle::after {
