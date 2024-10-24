@@ -1,0 +1,25 @@
+{
+  "name": "hackathonr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "parcel serve index.html", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@near-wallet-selector/core": "^8.9.14",
+    "@near-wallet-selector/my-near-wallet": "^8.9.14",
+    "@near-wallet-selector/near-wallet": "^8.9.3",
+    "@near-wallet-selector/sender": "^8.9.14"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
