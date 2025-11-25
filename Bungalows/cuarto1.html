@@ -227,7 +227,6 @@
                             event.preventDefault();
                         
                             const nombre = document.getElementById('nombre').value;
-                            const personas = document.getElementById('personas').value;
                             const fechaInicio = document.getElementById('fechaInicio').value;
                             const fechaSalida = document.getElementById('fechaSalida').value;
                         
@@ -248,7 +247,7 @@
                                 .toLocaleDateString('es-MX', opciones)
                                 .replace(',', '');
                         
-                            const mensaje = `Hola, quiero reservar una habitación a nombre de: ${nombre}, para ${personas} personas, planeando entrar el ${fechaInicioFormateada} y salir el ${fechaSalidaFormateada}`;
+                            const mensaje = `Hola, quiero reservar una el bugalow para 2 personas en planta baja a nombre de: ${nombre}, planeando entrar el ${fechaInicioFormateada} y salir el ${fechaSalidaFormateada}`;
                         
                             const numeroWhatsApp = "5213271043408";
                             const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
